@@ -39,7 +39,6 @@ class ProdukController extends Controller
             'harga'=> 'required',
 
         ]);
-
         
         $gambar = $request->file('gambar');
         $namaGambar = $gambar->getClientOriginalName();

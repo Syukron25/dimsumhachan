@@ -1,3 +1,4 @@
+import { router } from "@inertiajs/react"
 import ListFrame from "./ListFrame"
 
 export default function ListGalery(props) {
@@ -8,7 +9,7 @@ export default function ListGalery(props) {
   function hapusGalery(id, event) {
     event.preventDefault()
     router.delete(`/galery/${id}`, {
-      onBefore: confirm("yakin untuk di hapus ?"),
+      onBefore:() => confirm("yakin untuk di hapus ?"),
       preserveScroll: true
     }
     )

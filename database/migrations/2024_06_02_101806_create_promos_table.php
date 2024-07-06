@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\promo;
 
 return new class extends Migration
 {
@@ -18,6 +19,14 @@ return new class extends Migration
             $table->string('line1');
             $table->string('line2');
         });
+
+        promo::create(
+            [
+                'title'=>'Spesial promo',
+                'line1'=>'untuk dimsum 100 pcs',
+                'line2'=>'hanya Rp. 90.000'
+            ]
+            );
     }
 
     /**

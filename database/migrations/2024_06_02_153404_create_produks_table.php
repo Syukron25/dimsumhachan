@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama');
             $table->string('deskripsi');
-           
-
+            $table->string('harga');
+            $table->string('gambar');
 
         });
     }
