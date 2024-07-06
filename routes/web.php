@@ -24,7 +24,7 @@ Route::get('/', function () {
     });
 
 
-Route::get('/test',[PromoController::class, 'index']);
+Route::get('/',[PromoController::class, 'index']);
 Route::put('/testUpdate',[PromoController::class, 'update']);
 Route::post('/tambahproduk',[ProdukController::class, 'store'])->name('addprod');
 Route::post('/updateProduk/{id}',[ProdukController::class, 'update']);
