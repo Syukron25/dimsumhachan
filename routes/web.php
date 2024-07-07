@@ -8,9 +8,9 @@ use App\Http\Controllers\GaleryController;
 use Illuminate\Support\Facades\URL;
 
 
-if (env('APP_ENV') === 'production') {
-    URL::forceScheme('https');
-}
+// if (env('APP_ENV') === 'production') {
+//     URL::forceScheme('https');
+// }
 
 
 Route::get('/',[PromoController::class, 'index']);

@@ -8,10 +8,14 @@
         "src": "/(.*)",
         "dest": "/api/index.php"
     }],
+
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-	"APP_URL":"https://dimsumhachan.vercel.app",
+        "APP_URL": "https://yourproductionurl.com",
+        "APP_KEY":"base64:Z4GZhD9/jAbkexYWztJ7dUXsPPFBpIk5f64RS4ITxbg=",
+
+
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
