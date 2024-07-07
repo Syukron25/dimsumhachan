@@ -4,15 +4,24 @@
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
-    "routes": [{
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-    }],
+    
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "outputDirectory": "public",
+
 
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://yourproductionurl.com",
+        "APP_URL": "https://dimsumhachan.vercel.app",
         "APP_KEY":"base64:Z4GZhD9/jAbkexYWztJ7dUXsPPFBpIk5f64RS4ITxbg=",
 
 
