@@ -7,8 +7,8 @@ export default function Navbar(){
     
     return (
         <>
-            <section id="navbar" className={`flex fixed top-0 bg-white w-full h-16 px-8 z-10  ${navshow ? '' : 'shadow-md'} `}>
-                <button onClick={navbarklik} className="btn btn-ghost my-2 pr-4 md:hidden" ><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></button>
+            <section id="navbar" className={`flex fixed top-0 bg-white w-full h-16 px-1 z-10  ${navshow ? '' : 'shadow-md'} `}>
+                <button onClick={navbarklik} className="btn btn-ghost my-2 pr-2 md:hidden" ><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></button>
                 <button>Dimsum Hachan</button>
                 <ul className="hidden md:flex right-0 h-16 pr-14 justify-end absolute">
                     <li className="px-2 h-16 content-center  hover:bg-gray-100"><a href="#menu">Menu</a></li>

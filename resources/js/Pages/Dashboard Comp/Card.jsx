@@ -13,7 +13,7 @@ export default function Card(props) {
                     <p className="text-7xl">{props.total} </p>
                     <p className="font-extrabold text-lg pt-10" > terdaftar </p>
                 </div>
-                <div className="flex flex-row pb-2 gap-2" >
+                <div className="flex flex-wrap p-2 gap-2" >
                     <button className="btn btn-sm bg-blue-200   hover:bg-blue-300" onClick={props.tombollist} > {iconList}List </button>
                     <button className="btn btn-sm bg-green-200  hover:bg-green-300" onClick={props.tambah}> {iconPlus}Add</button>
                 </div>

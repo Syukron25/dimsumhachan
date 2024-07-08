@@ -1,8 +1,10 @@
+import herologo from "./dimsum.png"
+
 export default function Hero (props){
 
     return(
       <section id="hero" className="flex flex-col md:flex-row w-full p-2 items-center justify-center bg-teal-100">
-        <img className="h-48 md:h-64 p-2" src="/static/dimsum.png" ></img>
+        <img className="h-48 md:h-64 p-2" src={herologo} ></img>
         <div className="flex flex-col my-4 items-center justify-center">
           <p className="text-6xl text-blue-900 uppercase font-black text-center ">{props.title}</p>
           <p className="text-2xl ">{props.line1}</p>

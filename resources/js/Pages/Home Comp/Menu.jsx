@@ -24,9 +24,9 @@ export default function Menu(props) {
     }
 
     return (
-        <div id="menu" className="flex flex-col justify-center items-center gap-2 p-2 pt-16">
+        <div id="menu" className="flex flex-col w-full justify-center items-center gap-2 p-2 pt-16">
             <p className="font-black" > Menu </p>
-            <div className="flex flex-col md:flex-row gap-4 ">
+            <div className="flex flex-col  w-full justify-center items-center  md:flex-row gap-4 ">
             {Produkitem}
             </div>
             {Tombol}
