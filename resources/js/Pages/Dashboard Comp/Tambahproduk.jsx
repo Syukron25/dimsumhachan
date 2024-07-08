@@ -3,6 +3,7 @@ import ListFrame from "./ListFrame"
 
 export default function tambahproduk( props ){
 
+    
     const { data, setData, post, reset } = useForm({
         nama: "",
         deskripsi: "",
@@ -12,7 +13,9 @@ export default function tambahproduk( props ){
 
     function submit(e) {
         e.preventDefault()
-        post('/tambahproduk', {
+        post('/produk', {
+            _method: 'POST',
+            forceFormData: true,
             onSuccess: () => {
                 reset('nama', 'deskripsi', 'gambar'),
                     e.target.reset()
@@ -22,7 +25,7 @@ export default function tambahproduk( props ){
 
     return(
         <ListFrame title="Tambah produk" togle={props.togle}>
-            <form onSubmit={submit} className="flex flex-col p-2 m-2 gap-1 items-center justify-center">
+            <form onSubmit={submit} method="POST" encType="multipart/form-data" className="flex flex-col p-2 m-2 gap-1 items-center justify-center">
                 <label htmlFor="nama"> Nama </label>
                 <input id="nama" type="text" className="w-full rounded-md" placeholder="isi nama produk" onChange={(e) => setData('nama', e.target.value)}>
                 </input>

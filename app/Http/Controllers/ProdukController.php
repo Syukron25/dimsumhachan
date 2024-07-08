@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\produk;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Http;
 
 class ProdukController extends Controller
 {
@@ -30,27 +29,41 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+
+       
+
+
         $request->validate([
-            'nama' => 'required',
-            'deskripsi'=> 'required',
-            'gambar' => 'required|mimes:jpeg,png|max:5000',
-            'harga'=> 'required',
+            // 'nama' => 'required',
+            // 'deskripsi'=> 'required',
+            //'gambar' => 'required|mimes:jpeg,png|max:5000',
+            // 'harga'=> 'required',
 
         ]);
-        
+
         $gambar = $request->file('gambar');
+        $gambarbas64 =  base64_encode(file_get_contents($gambar->path()));
         $namaGambar = $gambar->getClientOriginalName();
-        $gambar->move('static', $request->nama.$namaGambar);
+       
+       // $gambar->move('static', $request->nama.$namaGambar);
+     // $response = Http::post('https://api.imgbb.com/1/upload?key=fc548af2999a5dcd9efc2a428f70dde2&image='.$gambar);
+    //    $response = Http::attach('attachment',$gambar,'photo.jpg')
+    //      ->post('https://freeimage.host/api/1/upload/?key=6d207e02198a847aa98d0a2a901485a5&source='.$gambar);
+     //  $response = Http::post("https://freeimage.host/api/1/upload/?key=6d207e02198a847aa98d0a2a901485a5&source=".$gambarbas64);
 
-        $produk = new produk;
-        $produk->nama = $request->nama;
-        $produk->deskripsi = $request->deskripsi;
-        $produk->gambar = $request->nama.$namaGambar;
-        $produk->harga = $request->harga;
-        $produk->save();
+$response = Http::withHeaders([
+    'Content-Type' => 'multipart/form-data',
+])->send("POST","https://freeimage.host/api/1/upload/?key=6d207e02198a847aa98d0a2a901485a5&source=".$gambarbas64);
+        $jsonData = $response->json();
+        dd($jsonData);
+        
 
-      //  return redirect ("/dashboard2");
-
+        // $produk = new produk;
+        // $produk->nama = $request->nama;
+        // $produk->deskripsi = $request->deskripsi;
+        // $produk->gambar = $request->nama.$namaGambar;
+        // $produk->harga = $request->harga;
+        // $produk->save();
        
     }
 

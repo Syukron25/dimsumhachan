@@ -13,13 +13,15 @@ if (env('APP_ENV') === 'production') {
 }
 
 
+//Route::post('/tambahproduk',[ProdukController::class, 'store']);
 Route::get('/',[PromoController::class, 'index']);
 Route::put('/testUpdate',[PromoController::class, 'update']);
-Route::post('/tambahproduk',[ProdukController::class, 'store'])->name('addprod');
-Route::post('/updateProduk/{id}',[ProdukController::class, 'update']);
-Route::delete('/deleteProduk/{id}',[ProdukController::class, 'destroy']);
+// Route::post('/updateProduk/{id}',[ProdukController::class, 'update']);
+// Route::delete('/deleteProduk/{id}',[ProdukController::class, 'destroy']);
 
 Route::resource('galery',GaleryController::class);
+Route::resource('produk',ProdukController::class);
+
 
 Route::get('/dashboard', [PromoController::class, 'indexDashboard']) -> middleware('auth')->name('dashboard');
 
