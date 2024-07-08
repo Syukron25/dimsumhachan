@@ -12,6 +12,7 @@ import Navtop from "./Dashboard Comp/Navtop.jsx"
 import UpdatePromo from "./Dashboard Comp/UpdatePromo.jsx"
 
 export default function dashboarhachanweb(props) {
+    document.body.style.paddingTop = '65px'
 
     const [toggleListProduk,settoggleListProduk] = useState (true)
     const [toggleTambahProduk,settoggleTambahProduk] = useState (false)
@@ -96,6 +97,7 @@ export default function dashboarhachanweb(props) {
 
     return (
         <>
+
             <Navtop username={props.auth.user.name} />
 
             <section id="main" className="flex flex-row w-full justify-end">

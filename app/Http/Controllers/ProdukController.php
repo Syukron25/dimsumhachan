@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\produk;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
 
 
 
@@ -42,7 +40,7 @@ class ProdukController extends Controller
         
         $gambar = $request->file('gambar');
         $namaGambar = $gambar->getClientOriginalName();
-        $gambar->move('img', $request->nama.$namaGambar);
+        $gambar->move('static', $request->nama.$namaGambar);
 
         $produk = new produk;
         $produk->nama = $request->nama;
@@ -82,8 +80,8 @@ class ProdukController extends Controller
         if ($request->hasFile('gambar')) {
             $gambar = $request->file("gambar");
             $namaGambar = $gambar->getClientOriginalName();
-            unlink("img/" . $produk->gambar);
-            $gambar->move('img', $request->nama . $namaGambar);
+            unlink("static/" . $produk->gambar);
+            $gambar->move('static', $request->nama . $namaGambar);
             $produk->update([
                 'nama' => $request->nama,
                 'deskripsi' => $request->desk,
@@ -106,7 +104,7 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         $produk = produk::where("id","=",$id)->first();
-        unlink("img/".$produk->gambar);
+        unlink("static/".$produk->gambar);
         $produk->delete();
     }
 

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\galery;
 use Illuminate\Http\Request;
 
-use function Laravel\Prompts\error;
-
 class GaleryController extends Controller
 {
     /**
@@ -43,7 +41,7 @@ class GaleryController extends Controller
         $galery->save();
 
         $gambar =  $request->file("namafile");
-        $gambar -> move("img",$highestid.$request->file("namafile")->getClientOriginalName());
+        $gambar -> move("static",$highestid.$request->file("namafile")->getClientOriginalName());
     }
 
     /**
@@ -76,10 +74,9 @@ class GaleryController extends Controller
      */
     public function destroy(galery $galery)
     {
-        //
+    
         $galery -> delete();
-        unlink('img/'.$galery->namafile);
+        unlink('static/'.$galery->namafile);
         error_log($galery );
-       // return redirect("/dashboard2");
     }
 }

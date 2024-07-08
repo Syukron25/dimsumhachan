@@ -10,6 +10,8 @@ import WhatsappWidget from "./Home Comp/WhatsappWidget"
 
 export default function hachanweb(props) {
 
+ document.body.style.paddingTop = '65px'
+ 
   const garis = <hr className="mx-auto w-1/2 bg-black"></hr>
 
   return (

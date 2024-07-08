@@ -23,13 +23,13 @@ export default function Galery(props) {
                     </div>
                     <div className="flex w-full flex-col gap-3 ">
                         {galery1.map((item, i) => <div key={i} className="p-2 bg-white text-center rounded-xl hover:scale-125 hover:shadow-md hover:bg-gray-100">
-                            <img key={i} src={`/img/${item.namafile}`}></img>
+                            <img key={i} src={`/static/${item.namafile}`}></img>
                             <p>{item.caption}</p></div>
                         )}
                     </div>
                     <div className="flex w-full flex-col gap-3">
                         {galery3.map((item, i) => <div key={i} className="p-2 bg-white text-center rounded-xl hover:scale-125 hover:shadow-md hover:bg-gray-100">
-                            <img key={i} src={`/img/${item.namafile}`}></img>
+                            <img key={i} src={`/static/${item.namafile}`}></img>
                             <p>{item.caption}</p></div>
                         )}
                     </div>
