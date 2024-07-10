@@ -13,11 +13,11 @@ export default function tambahproduk( props ){
 
     function submit(e) {
         e.preventDefault()
-        post('/produk', {
+        post('/tambahproduk', {
             _method: 'POST',
             forceFormData: true,
             onSuccess: () => {
-                reset('nama', 'deskripsi', 'gambar'),
+                reset('nama', 'deskripsi', 'harga', 'gambar'),
                     e.target.reset()
             }
         })

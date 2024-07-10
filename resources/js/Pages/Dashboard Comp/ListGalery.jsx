@@ -18,7 +18,7 @@ export default function ListGalery(props) {
   const Galerylist = galery.map((item, i) =>
     <tr className="hover" key={i}>
       <td> {i + 1} </td>
-      <td><img className="h-16" src={`static/${item.namafile}`}></img></td>
+      <td><img className="h-16" src={`img/${item.namafile}`}></img></td>
       <td>{item.caption}</td>
       <td className="flex flex-col gap-1">
         <button className="btn btn-sm btn-error" onClick={(e) => hapusGalery(item.id, e)}>{icontrash}</button>

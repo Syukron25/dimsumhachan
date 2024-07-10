@@ -41,7 +41,7 @@ class GaleryController extends Controller
         $galery->save();
 
         $gambar =  $request->file("namafile");
-        $gambar -> move("static",$highestid.$request->file("namafile")->getClientOriginalName());
+        $gambar -> move("img",$highestid.$request->file("namafile")->getClientOriginalName());
     }
 
     /**
@@ -76,7 +76,7 @@ class GaleryController extends Controller
     {
     
         $galery -> delete();
-        unlink('static/'.$galery->namafile);
-        error_log($galery );
+        if(file_exists('img/'.$galery->namafile)){
+        unlink('img/'.$galery->namafile);}
     }
 }

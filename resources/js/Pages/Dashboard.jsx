@@ -114,8 +114,8 @@ export default function dashboarhachanweb(props) {
                         <TambahGalery togle={toggleTambahGalery} errorscaption={props.errors.caption} errorsgambar={props.errors.namafile} />
                         <ListGalery togle={toggleListGalery} galerylist={props.galerylist} bukamodal={BukaModalGalery}/>
                     </ul>
-                    <p className="flex w-full pt-6 items-center justify-center font-semibold ">  Hero Header Promo Web </p>
-                    <Hero title={props.promo.title} line1={props.promo.line1} line2={props.promo.line2} />
+                    <p className="flex w-full pt-6 items-center justify-center font-semibold  ">  Hero Header Promo Web </p>
+                    <Hero title={props.promo.title} line1={props.promo.line1} line2={props.promo.line2} bg="bg-gray-200" />
                     <UpdatePromo title={props.promo.title} line1={props.promo.line1} line2={props.promo.line2} />
                 </div>
                 

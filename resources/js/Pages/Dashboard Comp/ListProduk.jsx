@@ -20,7 +20,7 @@ export default function ListProduk(props) {
       <td>{item.nama}</td>
       <td>{item.deskripsi}</td>
       <td>{item.harga}</td>
-      <td><img className="h-16" src={`static/${item.gambar}`}></img></td>
+      <td><img className="h-16" src={`img/${item.gambar}`}></img></td>
       <td className="flex flex-col gap-1" >
         <button className="btn btn-sm btn-error" onClick={(e) => hapusProduk(item.id, e)}>{icontrash}</button>
         <button className="btn btn-sm btn-warning" onClick={() => props.bukamodal(i)}>{iconEdit}</button></td>

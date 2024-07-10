@@ -7,21 +7,17 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\GaleryController;
 use Illuminate\Support\Facades\URL;
 
-
 if (env('APP_ENV') === 'production') {
     URL::forceScheme('https');
 }
 
-
-//Route::post('/tambahproduk',[ProdukController::class, 'store']);
+Route::post('/tambahproduk',[ProdukController::class, 'store']);
 Route::get('/',[PromoController::class, 'index']);
 Route::put('/testUpdate',[PromoController::class, 'update']);
-// Route::post('/updateProduk/{id}',[ProdukController::class, 'update']);
-// Route::delete('/deleteProduk/{id}',[ProdukController::class, 'destroy']);
+Route::post('/updateProduk/{id}',[ProdukController::class, 'update']);
+Route::delete('/deleteProduk/{id}',[ProdukController::class, 'destroy']);
 
 Route::resource('galery',GaleryController::class);
-Route::resource('produk',ProdukController::class);
-
 
 Route::get('/dashboard', [PromoController::class, 'indexDashboard']) -> middleware('auth')->name('dashboard');
 
