@@ -21,11 +21,12 @@ export default function Menu(props) {
     
     function gantiHal(i) {
         setpageSaatini(i)
-    }
+        document.getElementById("menu").scrollIntoView({behavior: "smooth"})   }
 
     return (
-        <div id="menu" className="flex flex-col w-full justify-center items-center gap-2 p-2 pt-16">
+        <div id="menu" className="flex flex-col w-full justify-center items-center gap-2  pt-16">
             <p className="font-black  text-teal-600" > Menu </p>
+            <div className="flex flex-row md:hidden">{Tombol}</div>
             <div className="flex flex-col w-full justify-center items-center  md:flex-row gap-4 ">
             {Produkitem}
             </div>
